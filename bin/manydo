@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+for i in $(heroku apps | tail -n +2 | cut -f 1 -d ' ' | xargs)
+do 
+  echo $i
+  heroku "$@" -a $i
+done
