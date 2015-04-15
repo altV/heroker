@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
-heroku "$@" -r prod
+#!/usr/bin/env ruby
+system "heroku #{ARGV.map{|e| '"' + e + '"'}.join(' ')} -r prod"
